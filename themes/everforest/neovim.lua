@@ -1,10 +1,19 @@
+function ColorMyPencils(color)
+	vim.cmd.colorscheme(color)
+
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
 return {
-	{ "neanias/everforest-nvim" },
-	{
-		"LazyVim/LazyVim",
-		opts = {
-			colorscheme = "everforest",
-			background = "soft",
-		},
-	},
+	"catppuccin/nvim",
+	name = "catppuccin",
+	config = function()
+		require("catppuccin").setup({
+			tranparent_backgroun = true,
+		})
+
+		ColorMyPencils("catppuccin")
+	end,
 }
+

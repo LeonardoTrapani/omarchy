@@ -1,9 +1,18 @@
+function ColorMyPencils(color)
+	vim.cmd.colorscheme(color)
+
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
 return {
-	{ "rose-pine/neovim", name = "rose-pine" },
-	{
-		"LazyVim/LazyVim",
-		opts = {
-			colorscheme = "rose-pine-dawn",
-		},
-	},
+	"catppuccin/nvim",
+	name = "catppuccin",
+	config = function()
+		require("catppuccin").setup({
+			tranparent_backgroun = true,
+		})
+
+		ColorMyPencils("catppuccin")
+	end,
 }
