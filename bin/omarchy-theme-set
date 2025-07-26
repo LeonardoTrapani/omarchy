@@ -35,6 +35,9 @@ fi
 # Trigger alacritty config reload
 touch "$HOME/.config/alacritty/alacritty.toml"
 
+# Trigger tmux config reload
+touch "$HOME/.config/tmux/tmux.conf"
+
 # Restart components to apply new theme
 pkill -SIGUSR2 btop
 pkill -SIGUSR2 waybar

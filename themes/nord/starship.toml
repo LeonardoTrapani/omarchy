@@ -1,0 +1,185 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](red)\
+$os\
+[](fg:red bg:peach )\
+$directory\
+[](fg:peach bg:green)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:green bg:yellow)\
+$git_branch\
+$git_status\
+[ ](fg:yellow)\
+$cmd_duration\
+$line_break\
+$character"""
+
+palette = 'nord'
+
+[os]
+disabled = false
+style = "bg:red fg:base"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:red fg:base"
+style_root = "bg:red fg:base"
+format = '[ $user]($style)'
+
+[directory]
+style = "bg:peach fg:base"
+format = "[ $path ]($style)"
+truncation_length = 0
+truncation_symbol = ""
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:yellow"
+format = '[[ $symbol $branch ](fg:base bg:yellow)]($style)'
+
+[git_status]
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:base bg:yellow)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[c]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[php]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[java]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[python]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:base bg:green)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:base bg:sapphire)]($style)'
+
+[conda]
+symbol = "  "
+style = "fg:base bg:sapphire"
+format = '[$symbol$environment ]($style)'
+ignore_base = false
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:lavender"
+format = '[[  $time ](fg:base bg:lavender)]($style)'
+
+[line_break]
+disabled = true
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
+vimcmd_replace_symbol = '[❮](bold fg:lavender)'
+vimcmd_visual_symbol = '[❮](bold fg:yellow)'
+
+[cmd_duration]
+show_milliseconds = true
+format = " in $duration "
+style = "bg:lavender"
+disabled = false
+show_notifications = true
+min_time_to_notify = 45000
+
+[palettes.nord]
+# Based on Nord color scheme
+red = "#bf616a"        # Nord Red
+peach = "#d08770"      # Nord Orange
+yellow = "#ebcb8b"     # Nord Yellow  
+green = "#a3be8c"      # Nord Green
+teal = "#8fbcbb"       # Nord Frost 2
+sky = "#88c0d0"        # Nord Frost 1
+sapphire = "#81a1c1"   # Nord Blue
+blue = "#5e81ac"       # Nord Blue Dark
+lavender = "#b48ead"   # Nord Purple
+text = "#d8dee9"       # Nord Snow Storm 1
+subtext1 = "#e5e9f0"   # Nord Snow Storm 2
+subtext0 = "#eceff4"   # Nord Snow Storm 3
+overlay2 = "#4c566a"   # Nord Polar Night 2
+overlay1 = "#434c5e"   # Nord Polar Night 1
+overlay0 = "#3b4252"   # Nord Polar Night 0
+surface2 = "#434c5e"
+surface1 = "#3b4252"
+surface0 = "#2e3440"   # Nord Polar Night base
+base = "#2e3440"       # Nord base background
+mantle = "#2e3440"
+crust = "#2e3440" 

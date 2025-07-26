@@ -6,13 +6,22 @@ function ColorMyPencils(color)
 end
 
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
+	"shaunsingh/nord.nvim",
+	name = "nord",
+	lazy = false,
+	priority = 1000,
 	config = function()
-		require("catppuccin").setup({
-			tranparent_backgroun = true,
-		})
+		-- Nord configuration
+		vim.g.nord_contrast = true
+		vim.g.nord_borders = false
+		vim.g.nord_disable_background = true -- Enable transparent background
+		vim.g.nord_italic = true
+		vim.g.nord_uniform_diff_background = true
+		vim.g.nord_bold = true
 
-		ColorMyPencils("catppuccin")
+		-- Load the colorscheme
+		require('nord').set()
+		
+		ColorMyPencils("nord")
 	end,
 }

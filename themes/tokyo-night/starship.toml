@@ -1,0 +1,185 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](red)\
+$os\
+[](fg:red bg:peach )\
+$directory\
+[](fg:peach bg:green)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:green bg:yellow)\
+$git_branch\
+$git_status\
+[ ](fg:yellow)\
+$cmd_duration\
+$line_break\
+$character"""
+
+palette = 'tokyo_night'
+
+[os]
+disabled = false
+style = "bg:red fg:base"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:red fg:base"
+style_root = "bg:red fg:base"
+format = '[ $user]($style)'
+
+[directory]
+style = "bg:peach fg:base"
+format = "[ $path ]($style)"
+truncation_length = 0
+truncation_symbol = ""
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:yellow"
+format = '[[ $symbol $branch ](fg:base bg:yellow)]($style)'
+
+[git_status]
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:base bg:yellow)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[c]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[php]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[java]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[python]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:base bg:green)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:base bg:sapphire)]($style)'
+
+[conda]
+symbol = "  "
+style = "fg:base bg:sapphire"
+format = '[$symbol$environment ]($style)'
+ignore_base = false
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:lavender"
+format = '[[  $time ](fg:base bg:lavender)]($style)'
+
+[line_break]
+disabled = true
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
+vimcmd_replace_symbol = '[❮](bold fg:lavender)'
+vimcmd_visual_symbol = '[❮](bold fg:yellow)'
+
+[cmd_duration]
+show_milliseconds = true
+format = " in $duration "
+style = "bg:lavender"
+disabled = false
+show_notifications = true
+min_time_to_notify = 45000
+
+[palettes.tokyo_night]
+# Based on Tokyo Night color scheme
+red = "#f7768e"        # Tokyo Night Red
+peach = "#ff9e64"      # Tokyo Night Orange
+yellow = "#e0af68"     # Tokyo Night Yellow
+green = "#9ece6a"      # Tokyo Night Green
+teal = "#1abc9c"       # Tokyo Night Teal
+sky = "#2ac3de"        # Tokyo Night Cyan
+sapphire = "#7aa2f7"   # Tokyo Night Blue
+blue = "#7aa2f7"       # Tokyo Night Blue
+lavender = "#bb9af7"   # Tokyo Night Purple
+text = "#a9b1d6"       # Tokyo Night foreground
+subtext1 = "#c0caf5"   # Tokyo Night light
+subtext0 = "#9aa5ce"   # Tokyo Night comment
+overlay2 = "#565f89"   # Tokyo Night dark
+overlay1 = "#414868"   # Tokyo Night darker
+overlay0 = "#24283b"   # Tokyo Night storm bg
+surface2 = "#1a1b26"   # Tokyo Night bg
+surface1 = "#16161e"   # Tokyo Night bg dark
+surface0 = "#1a1b26"   # Tokyo Night background
+base = "#1a1b26"       # Tokyo Night base background
+mantle = "#16161e"     # Tokyo Night dark background
+crust = "#16161e"      # Tokyo Night dark background 

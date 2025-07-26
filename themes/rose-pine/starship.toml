@@ -1,0 +1,185 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](red)\
+$os\
+[](fg:red bg:peach )\
+$directory\
+[](fg:peach bg:green)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:green bg:yellow)\
+$git_branch\
+$git_status\
+[ ](fg:yellow)\
+$cmd_duration\
+$line_break\
+$character"""
+
+palette = 'rose_pine'
+
+[os]
+disabled = false
+style = "bg:red fg:base"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:red fg:base"
+style_root = "bg:red fg:base"
+format = '[ $user]($style)'
+
+[directory]
+style = "bg:peach fg:base"
+format = "[ $path ]($style)"
+truncation_length = 0
+truncation_symbol = ""
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:yellow"
+format = '[[ $symbol $branch ](fg:base bg:yellow)]($style)'
+
+[git_status]
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:base bg:yellow)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[c]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[php]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[java]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+
+[python]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:base bg:green)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:base bg:sapphire)]($style)'
+
+[conda]
+symbol = "  "
+style = "fg:base bg:sapphire"
+format = '[$symbol$environment ]($style)'
+ignore_base = false
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:lavender"
+format = '[[  $time ](fg:base bg:lavender)]($style)'
+
+[line_break]
+disabled = true
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
+vimcmd_replace_symbol = '[❮](bold fg:lavender)'
+vimcmd_visual_symbol = '[❮](bold fg:yellow)'
+
+[cmd_duration]
+show_milliseconds = true
+format = " in $duration "
+style = "bg:lavender"
+disabled = false
+show_notifications = true
+min_time_to_notify = 45000
+
+[palettes.rose_pine]
+# Based on Rose Pine color scheme
+red = "#b4637a"        # Rose Pine love
+peach = "#ea9d34"      # Rose Pine gold
+yellow = "#ea9d34"     # Rose Pine gold
+green = "#286983"      # Rose Pine pine
+teal = "#56949f"       # Rose Pine foam
+sky = "#56949f"        # Rose Pine foam
+sapphire = "#56949f"   # Rose Pine foam
+blue = "#56949f"       # Rose Pine foam
+lavender = "#907aa9"   # Rose Pine iris
+text = "#575279"       # Rose Pine text
+subtext1 = "#6e6a86"   # Rose Pine subtle
+subtext0 = "#797593"   # Rose Pine muted
+overlay2 = "#9893a5"   # Rose Pine overlay
+overlay1 = "#cecacd"   # Rose Pine surface
+overlay0 = "#dfdad9"   # Rose Pine highlight med
+surface2 = "#f2e9e1"   # Rose Pine highlight low
+surface1 = "#fffaf3"   # Rose Pine highlight high
+surface0 = "#faf4ed"   # Rose Pine base
+base = "#faf4ed"       # Rose Pine base background
+mantle = "#f2e9e1"     # Rose Pine highlight low
+crust = "#fffaf3"      # Rose Pine highlight high 
