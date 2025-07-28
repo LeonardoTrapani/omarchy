@@ -1,3 +1,10 @@
+function ColorMyPencils(color)
+	vim.cmd.colorscheme(color)
+
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
 return {
 	{
 		"gthelding/monokai-pro.nvim",
@@ -10,13 +17,7 @@ return {
 					}
 				end,
 			})
-			vim.cmd([[colorscheme monokai-pro]])
+			ColorMyPencils("monokai-pro")
 		end,
-	},
-	{
-		"LazyVim/LazyVim",
-		opts = {
-			colorscheme = "monokai-pro",
-		},
 	},
 }
