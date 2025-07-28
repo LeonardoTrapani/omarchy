@@ -7,13 +7,13 @@ end
 
 return {
 	"catppuccin/nvim",
-	name = "catppuccin",
+	name = "catppuccin-latte",
 	config = function()
-		require("catppuccin").setup({
-			transparent_background = true,
-			flavour = "latte", -- latte, frappe, macchiato, mocha
+		require("catppuccin-latte").setup({
+			tranparent_backgroun = true,
+			flavour = "latte",
 		})
 
-		ColorMyPencils("catppuccin")
+		ColorMyPencils("catppuccin-latte")
 	end,
 }

@@ -1,12 +1,17 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](red)\
+[](color_orange)\
 $os\
-[](fg:red bg:peach )\
+$username\
+[](bg:color_yellow fg:color_orange)\
 $directory\
-[](fg:peach bg:green)\
+[](fg:color_yellow bg:color_aqua)\
+$git_branch\
+$git_status\
+[](fg:color_aqua bg:color_blue)\
 $c\
+$cpp\
 $rust\
 $golang\
 $nodejs\
@@ -15,171 +20,160 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:green bg:yellow)\
-$git_branch\
-$git_status\
-[ ](fg:yellow)\
-$cmd_duration\
-$line_break\
-$character"""
+[](fg:color_blue bg:color_bg3)\
+$docker_context\
+$conda\
+$pixi\
+[ ](fg:color_bg3)\
+$line_break$character"""
 
 palette = 'kanagawa'
 
+[palettes.kanagawa]
+color_fg0 = '#dcd7ba'
+color_bg0 = '#1f1f28'
+color_bg1 = '#727169'
+color_bg3 = '#727169'
+color_blue = '#7e9cd8'
+color_aqua = '#6a9589'
+color_green = '#76946a'
+color_orange = '#ffa066'
+color_purple = '#957fb8'
+color_red = '#c34043'
+color_yellow = '#c0a36e'
+
 [os]
 disabled = false
-style = "bg:red fg:base"
+style = "bg:color_orange fg:color_bg0"
 
 [os.symbols]
-Windows = ""
+Windows = "󰍲"
 Ubuntu = "󰕈"
-SUSE = ""
+SUSE = ""
 Raspbian = "󰐿"
 Mint = "󰣭"
 Macos = "󰀵"
-Manjaro = ""
+Manjaro = ""
 Linux = "󰌽"
 Gentoo = "󰣨"
 Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
+Alpine = ""
+Amazon = ""
+Android = ""
 Arch = "󰣇"
 Artix = "󰣇"
-CentOS = ""
+EndeavourOS = ""
+CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+Pop = ""
 
 [username]
 show_always = true
-style_user = "bg:red fg:base"
-style_root = "bg:red fg:base"
-format = '[ $user]($style)'
+style_user = "bg:color_orange fg:color_bg0"
+style_root = "bg:color_orange fg:color_bg0"
+format = '[ $user ]($style)'
 
 [directory]
-style = "bg:peach fg:base"
+style = "fg:color_bg0 bg:color_yellow"
 format = "[ $path ]($style)"
-truncation_length = 0
-truncation_symbol = ""
+truncation_length = 3
+truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
-"Downloads" = " "
+"Downloads" = " "
 "Music" = "󰝚 "
-"Pictures" = " "
+"Pictures" = " "
 "Developer" = "󰲋 "
 
 [git_branch]
-symbol = ""
-style = "bg:yellow"
-format = '[[ $symbol $branch ](fg:base bg:yellow)]($style)'
+symbol = ""
+style = "bg:color_aqua"
+format = '[[ $symbol $branch ](fg:color_bg0 bg:color_aqua)]($style)'
 
 [git_status]
-style = "bg:yellow"
-format = '[[($all_status$ahead_behind )](fg:base bg:yellow)]($style)'
+style = "bg:color_aqua"
+format = '[[($all_status$ahead_behind )](fg:color_bg0 bg:color_aqua)]($style)'
 
 [nodejs]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [c]
-symbol = " "
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = " "
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
+
+[cpp]
+symbol = " "
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [rust]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [golang]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [php]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [java]
-symbol = " "
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [kotlin]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [haskell]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [python]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [docker_context]
-symbol = ""
-style = "bg:sapphire"
-format = '[[ $symbol( $context) ](fg:base bg:sapphire)]($style)'
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol( $context) ](fg:color_fg0 bg:color_bg3)]($style)'
 
 [conda]
-symbol = "  "
-style = "fg:base bg:sapphire"
-format = '[$symbol$environment ]($style)'
-ignore_base = false
+style = "bg:color_bg3"
+format = '[[ $symbol( $environment) ](fg:color_fg0 bg:color_bg3)]($style)'
+
+[pixi]
+style = "bg:color_bg3"
+format = '[[ $symbol( $version)( $environment) ](fg:color_fg0 bg:color_bg3)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:lavender"
-format = '[[  $time ](fg:base bg:lavender)]($style)'
+style = "bg:color_bg1"
+format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 
 [line_break]
-disabled = true
+disabled = false
 
 [character]
 disabled = false
-success_symbol = '[❯](bold fg:green)'
-error_symbol = '[❯](bold fg:red)'
-vimcmd_symbol = '[❮](bold fg:green)'
-vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
-vimcmd_replace_symbol = '[❮](bold fg:lavender)'
-vimcmd_visual_symbol = '[❮](bold fg:yellow)'
-
-[cmd_duration]
-show_milliseconds = true
-format = " in $duration "
-style = "bg:lavender"
-disabled = false
-show_notifications = true
-min_time_to_notify = 45000
-
-[palettes.kanagawa]
-# Based on Kanagawa color scheme
-red = "#c34043"        # Kanagawa Red
-peach = "#ffa066"      # Kanagawa Orange
-yellow = "#c0a36e"     # Kanagawa Yellow
-green = "#76946a"      # Kanagawa Green
-teal = "#6a9589"       # Kanagawa Aqua
-sky = "#7fb4ca"        # Kanagawa Blue Light
-sapphire = "#7e9cd8"   # Kanagawa Blue
-blue = "#7e9cd8"       # Kanagawa Blue
-lavender = "#957fb8"   # Kanagawa Purple
-text = "#dcd7ba"       # Kanagawa foreground
-subtext1 = "#c8c093"   # Kanagawa light
-subtext0 = "#938aa9"   # Kanagawa violet
-overlay2 = "#727169"   # Kanagawa comment
-overlay1 = "#54546d"   # Kanagawa dark
-overlay0 = "#363646"   # Kanagawa darker
-surface2 = "#2a2a37"   # Kanagawa dark1
-surface1 = "#1f1f28"   # Kanagawa bg
-surface0 = "#1f1f28"   # Kanagawa background
-base = "#1f1f28"       # Kanagawa base background
-mantle = "#16161d"     # Kanagawa dark background
-crust = "#090618"      # Kanagawa black 
+success_symbol = '[](bold fg:color_green)'
+error_symbol = '[](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'

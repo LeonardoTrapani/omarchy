@@ -19,6 +19,7 @@ ln -snf ~/.config/omarchy/current/theme/backgrounds/1-scenery-pink-lakeside-suns
 
 # Set specific app links for current theme
 ln -snf ~/.config/omarchy/current/theme/neovim.lua ~/trapani-os/nvim/.config/nvim/lua/trapani/lazy/theme.lua
+ln -snf ~/.config/omarchy/current/theme/starship.toml ~/.config/starship.toml
 
 mkdir -p ~/.config/btop/themes
 ln -snf ~/.config/omarchy/current/theme/btop.theme ~/.config/btop/themes/current.theme

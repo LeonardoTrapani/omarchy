@@ -1,12 +1,17 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](red)\
+[](color_orange)\
 $os\
-[](fg:red bg:peach )\
+$username\
+[](bg:color_yellow fg:color_orange)\
 $directory\
-[](fg:peach bg:green)\
+[](fg:color_yellow bg:color_aqua)\
+$git_branch\
+$git_status\
+[](fg:color_aqua bg:color_blue)\
 $c\
+$cpp\
 $rust\
 $golang\
 $nodejs\
@@ -15,171 +20,161 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:green bg:yellow)\
-$git_branch\
-$git_status\
-[ ](fg:yellow)\
-$cmd_duration\
-$line_break\
-$character"""
+[](fg:color_blue bg:color_bg3)\
+$docker_context\
+$conda\
+$pixi\
+[ ](fg:color_bg3)\
+$line_break$character"""
 
 palette = 'nord'
 
+[palettes.nord]
+# UI Design: Semantic color assignments using authentic Nord palette
+color_fg0 = '#d8dee9'      # Snow Storm - main text
+color_bg0 = '#2e3440'      # Polar Night - main background  
+color_bg1 = '#4c566a'      # Polar Night - secondary background
+color_bg3 = '#81a1c1'      # Frost Blue - system environment
+color_blue = '#81a1c1'     # Frost Blue - secondary info
+color_aqua = '#88c0d0'     # Frost Cyan - git status
+color_green = '#a3be8c'    # Aurora Green - development tools
+color_orange = '#d08770'   # Aurora Orange - identity/OS
+color_purple = '#b48ead'   # Aurora Purple - special states
+color_red = '#bf616a'      # Aurora Red - errors, critical
+color_yellow = '#ebcb8b'   # Aurora Yellow - directory/location
+
 [os]
 disabled = false
-style = "bg:red fg:base"
+style = "bg:color_orange fg:color_bg0"
 
 [os.symbols]
-Windows = ""
+Windows = "󰍲"
 Ubuntu = "󰕈"
-SUSE = ""
+SUSE = ""
 Raspbian = "󰐿"
 Mint = "󰣭"
 Macos = "󰀵"
-Manjaro = ""
+Manjaro = ""
 Linux = "󰌽"
 Gentoo = "󰣨"
 Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
+Alpine = ""
+Amazon = ""
+Android = ""
 Arch = "󰣇"
 Artix = "󰣇"
-CentOS = ""
+EndeavourOS = ""
+CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+Pop = ""
 
 [username]
 show_always = true
-style_user = "bg:red fg:base"
-style_root = "bg:red fg:base"
-format = '[ $user]($style)'
+style_user = "bg:color_orange fg:color_bg0"
+style_root = "bg:color_orange fg:color_bg0"
+format = '[ $user ]($style)'
 
 [directory]
-style = "bg:peach fg:base"
+style = "fg:color_bg0 bg:color_yellow"
 format = "[ $path ]($style)"
-truncation_length = 0
-truncation_symbol = ""
+truncation_length = 3
+truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
-"Downloads" = " "
+"Downloads" = " "
 "Music" = "󰝚 "
-"Pictures" = " "
+"Pictures" = " "
 "Developer" = "󰲋 "
 
 [git_branch]
-symbol = ""
-style = "bg:yellow"
-format = '[[ $symbol $branch ](fg:base bg:yellow)]($style)'
+symbol = ""
+style = "bg:color_aqua"
+format = '[[ $symbol $branch ](fg:color_bg0 bg:color_aqua)]($style)'
 
 [git_status]
-style = "bg:yellow"
-format = '[[($all_status$ahead_behind )](fg:base bg:yellow)]($style)'
+style = "bg:color_aqua"
+format = '[[($all_status$ahead_behind )](fg:color_bg0 bg:color_aqua)]($style)'
 
 [nodejs]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [c]
-symbol = " "
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = " "
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
+
+[cpp]
+symbol = " "
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [rust]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [golang]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [php]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [java]
-symbol = " "
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [kotlin]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [haskell]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [python]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_bg0 bg:color_blue)]($style)'
 
 [docker_context]
-symbol = ""
-style = "bg:sapphire"
-format = '[[ $symbol( $context) ](fg:base bg:sapphire)]($style)'
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol( $context) ](fg:color_fg0 bg:color_bg3)]($style)'
 
 [conda]
-symbol = "  "
-style = "fg:base bg:sapphire"
-format = '[$symbol$environment ]($style)'
-ignore_base = false
+style = "bg:color_bg3"
+format = '[[ $symbol( $environment) ](fg:color_fg0 bg:color_bg3)]($style)'
+
+[pixi]
+style = "bg:color_bg3"
+format = '[[ $symbol( $version)( $environment) ](fg:color_fg0 bg:color_bg3)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:lavender"
-format = '[[  $time ](fg:base bg:lavender)]($style)'
+style = "bg:color_bg1"
+format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 
 [line_break]
-disabled = true
+disabled = false
 
 [character]
 disabled = false
-success_symbol = '[❯](bold fg:green)'
-error_symbol = '[❯](bold fg:red)'
-vimcmd_symbol = '[❮](bold fg:green)'
-vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
-vimcmd_replace_symbol = '[❮](bold fg:lavender)'
-vimcmd_visual_symbol = '[❮](bold fg:yellow)'
-
-[cmd_duration]
-show_milliseconds = true
-format = " in $duration "
-style = "bg:lavender"
-disabled = false
-show_notifications = true
-min_time_to_notify = 45000
-
-[palettes.nord]
-# Based on Nord color scheme
-red = "#bf616a"        # Nord Red
-peach = "#d08770"      # Nord Orange
-yellow = "#ebcb8b"     # Nord Yellow  
-green = "#a3be8c"      # Nord Green
-teal = "#8fbcbb"       # Nord Frost 2
-sky = "#88c0d0"        # Nord Frost 1
-sapphire = "#81a1c1"   # Nord Blue
-blue = "#5e81ac"       # Nord Blue Dark
-lavender = "#b48ead"   # Nord Purple
-text = "#d8dee9"       # Nord Snow Storm 1
-subtext1 = "#e5e9f0"   # Nord Snow Storm 2
-subtext0 = "#eceff4"   # Nord Snow Storm 3
-overlay2 = "#4c566a"   # Nord Polar Night 2
-overlay1 = "#434c5e"   # Nord Polar Night 1
-overlay0 = "#3b4252"   # Nord Polar Night 0
-surface2 = "#434c5e"
-surface1 = "#3b4252"
-surface0 = "#2e3440"   # Nord Polar Night base
-base = "#2e3440"       # Nord base background
-mantle = "#2e3440"
-crust = "#2e3440" 
+success_symbol = '[](bold fg:color_green)'
+error_symbol = '[](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'
