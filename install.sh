@@ -31,7 +31,7 @@ source $OMARCHY_INSTALL/preflight/presentation.sh
 
 # Configuration
 show_logo beams 240
-show_subtext "Let's install Omarchy! [1/5]"
+show_subtext "Let's install Omarchy! [1/6]"
 source $OMARCHY_INSTALL/config/identification.sh
 source $OMARCHY_INSTALL/config/config.sh
 source $OMARCHY_INSTALL/config/detect-keyboard-layout.sh
@@ -44,7 +44,7 @@ source $OMARCHY_INSTALL/config/nvidia.sh
 
 # Development
 show_logo decrypt 920
-show_subtext "Installing terminal tools [2/5]"
+show_subtext "Installing terminal tools [2/6]"
 source $OMARCHY_INSTALL/development/terminal.sh
 source $OMARCHY_INSTALL/development/development.sh
 source $OMARCHY_INSTALL/development/nvim.sh
@@ -52,9 +52,15 @@ source $OMARCHY_INSTALL/development/ruby.sh
 source $OMARCHY_INSTALL/development/docker.sh
 source $OMARCHY_INSTALL/development/firewall.sh
 
+# Install os dotfiles
+show_logo slice 60
+show_subtext "Installing OS dotfiles [3/6]"
+source $OMARCHY_INSTALL/os-dotfiles/packages.sh
+source $OMARCHY_INSTALL/os-dotfiles/stow.sh
+
 # Desktop
 show_logo slice 60
-show_subtext "Installing desktop tools [3/5]"
+show_subtext "Installing desktop tools [4/6]"
 source $OMARCHY_INSTALL/desktop/desktop.sh
 source $OMARCHY_INSTALL/desktop/hyprlandia.sh
 source $OMARCHY_INSTALL/desktop/theme.sh
@@ -65,14 +71,14 @@ source $OMARCHY_INSTALL/desktop/printer.sh
 
 # Apps
 show_logo expand
-show_subtext "Installing default applications [4/5]"
+show_subtext "Installing default applications [5/6]"
 source $OMARCHY_INSTALL/apps/webapps.sh
 source $OMARCHY_INSTALL/apps/xtras.sh
 source $OMARCHY_INSTALL/apps/mimetypes.sh
 
 # Updates
 show_logo highlight
-show_subtext "Updating system packages [5/5]"
+show_subtext "Updating system packages [6/6]"
 sudo updatedb
 sudo pacman -Syu --noconfirm
 
