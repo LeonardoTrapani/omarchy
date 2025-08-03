@@ -1,0 +1,18 @@
+session_name: os
+start_directory: ~/
+windows:
+  - window_name: os
+    panes:
+      - shell_command:
+        - cd os
+        - clear
+  - window_name: config
+    panes:
+      - shell_command:
+        - cd .config
+        - clear
+  - window_name: local
+    panes:
+      - shell_command:
+        - cd .local/share/omarchy
+        - clear

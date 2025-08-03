@@ -1,0 +1,22 @@
+session_name: slice
+start_directory: ~/dev/slice
+windows:
+  - window_name: slice
+    focus: true
+    panes:
+      - shell_command:
+          - nvim
+  - window_name: cmd
+    panes:
+      - shell_command:
+          -
+  - window_name: server
+    layout: main-vertical
+    panes:
+      - shell_command:
+          - google-chrome-stable
+          - pnpm dev
+      - shell_command:
+          - cd ..
+          - cd techfolio-backend
+          - ./manage.sh runserver

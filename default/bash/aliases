@@ -36,3 +36,24 @@ alias gcad='git commit -a --amend'
 
 # Find packages without leaving the terminal
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
+
+# Text editors
+alias v='nvim'
+alias vim='nvim'
+
+# Version control
+alias g='git'
+
+# Package manager
+alias npm='pnpm'
+
+# Tmux
+alias tls='tmuxp load'
+alias tks='tmux kill-session'
+alias tksv='tmux kill-server'
+
+# Clear terminal
+alias c='clear'
+
+# Create directory and parent directories if needed
+alias mkdir='mkdir -p'

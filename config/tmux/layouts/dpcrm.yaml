@@ -1,0 +1,27 @@
+session_name: dpcrm
+start_directory: ~/dev/
+windows:
+  - window_name: crm
+    focus: true
+    panes:
+      - shell_command:
+          - cd crm
+          - nvim
+  - window_name: backend
+    panes:
+      - shell_command:
+          - cd techfolio-backend
+          - vim
+  - window_name: cmd
+    panes:
+      - shell_command:
+          - clear
+  - window_name: server
+    layout: main-vertical
+    panes:
+      - shell_command:
+          - cd techfolio-backend
+          - poetry run python manage.py runserver
+      - shell_command:
+          - cd crm
+          - pnpm dev

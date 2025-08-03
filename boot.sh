@@ -31,17 +31,5 @@ if [[ -n "$OMARCHY_REF" ]]; then
   cd -
 fi
 
-echo -e "\nCloning trapani os dotfiles"
-rm -rf ~/os
-git clone https://github.com/leonardotrapani/os.git ~/os >/dev/null
-
-# Use custom branch if instructed
-if [[ -n "$OS_REF" ]]; then
-  echo -e "\eUsing branch: $OS_REF"
-  cd ~/os
-  git fetch origin "${OS_REF}" && git checkout "${OS_REF}"
-  cd -
-fi
-
 echo -e "\nInstallation starting..."
 source ~/.local/share/omarchy/install.sh

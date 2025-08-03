@@ -14,3 +14,17 @@ fi
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init bash)"
 fi
+
+if command -v starship &> /dev/null; then
+  eval "$(starship init bash)"
+fi
+
+if command -v pyenv &> /dev/null; then
+  eval "$(pyenv init -)"
+fi
+
+if command -v op &> /dev/null; then
+  eval "$(op completion bash)"
+  source ~/.config/op/plugins.sh
+fi
+
