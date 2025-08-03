@@ -16,9 +16,12 @@ echo -e "\n$ansi_art\n"
 
 sudo pacman -Sy --noconfirm --needed git
 
-echo -e "\nCloning Omarchy..."
+# Use custom repo if specified, otherwise default to leonardotrapani/omarchy
+OMARCHY_REPO="${OMARCHY_REPO:-leonardotrapani/omarchy}"
+
+echo -e "\nCloning Omarchy from: https://github.com/${OMARCHY_REPO}.git"
 rm -rf ~/.local/share/omarchy/
-git clone https://github.com/leonardotrapani/omarchy.git ~/.local/share/omarchy >/dev/null
+git clone "https://github.com/${OMARCHY_REPO}.git" ~/.local/share/omarchy >/dev/null
 
 # Use custom branch if instructed
 if [[ -n "$OMARCHY_REF" ]]; then
