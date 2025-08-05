@@ -43,8 +43,13 @@
       "5": []
     }
   },
+  "custom/omarchy": {
+    "format": "",
+    "on-click": "~/.local/share/omarchy/bin/omarchy-menu",
+    "tooltip-format": "SUPER + ALT + SPACE"
+  },
   "custom/update": {
-    "format": "",
+    "format": "",
     "exec": "~/.local/share/omarchy/bin/omarchy-update-available",
     "on-click": "alacritty --class Omarchy --title Omarchy -e omarchy-update",
     "interval": 3600

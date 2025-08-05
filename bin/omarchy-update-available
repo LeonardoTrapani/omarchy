@@ -9,6 +9,12 @@ else
   remote="origin"
 fi
 
+# Ensure remote is reachable
+if ! git -C "$omarchy_path" ls-remote &>/dev/null; then
+  echo "Error: Unable to reach remote repository."
+  exit 1
+fi
+
 latest_tag=$(git -C $omarchy_path ls-remote --tags $remote | grep -v "{}" | awk '{print $2}' | sed 's#refs/tags/##' | sort -V | tail -n 1)
 current_tag=$(git -C $omarchy_path describe --tags $(git -C $omarchy_path rev-list --tags --max-count=1))
 
