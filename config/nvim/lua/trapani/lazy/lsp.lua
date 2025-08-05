@@ -70,7 +70,41 @@ return {
 			svelte = true,
 
 			-- Python
-			pyright = {},
+			pyright = {
+				before_init = function(_, config)
+					-- Try to find Poetry virtual environment
+					local util = require("lspconfig/util")
+					local path = util.path
+					
+					-- Check for Poetry virtual environment
+					local poetry_lock = util.root_pattern("poetry.lock")(config.root_dir)
+					if poetry_lock then
+						local venv_path = vim.fn.trim(vim.fn.system("cd " .. config.root_dir .. " && poetry env info --path 2>/dev/null"))
+						if vim.v.shell_error == 0 and venv_path ~= "" then
+							config.settings.python.pythonPath = path.join(venv_path, "bin", "python")
+						end
+					end
+				end,
+				settings = {
+					python = {
+						analysis = {
+							typeCheckingMode = "basic",
+							autoSearchPaths = true,
+							useLibraryCodeForTypes = true,
+							diagnosticMode = "workspace",
+							-- Django-specific settings
+							autoImportCompletions = true,
+							-- Disable some problematic checks for Django
+							diagnosticSeverityOverrides = {
+								reportOptionalMemberAccess = "none",
+								reportOptionalSubscript = "none",
+								reportAttributeAccessIssue = "warning",
+								reportIncompatibleMethodOverride = "warning",
+							},
+						},
+					},
+				},
+			},
 
 			-- ESLint for JavaScript/TypeScript linting
 			eslint = {},

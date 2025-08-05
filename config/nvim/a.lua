@@ -1,1 +1,0 @@
-../../trapani-os/nvim/.config/nvim/a.lua
