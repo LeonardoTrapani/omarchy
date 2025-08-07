@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Trezor
+Exec=~/.local/bin/Trez.AppImage
+Icon=Btc
+Comment=Cryptocurrency Wallet
+Categories=Utility;
+Terminal=false

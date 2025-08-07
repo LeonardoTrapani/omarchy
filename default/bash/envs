@@ -16,3 +16,5 @@ case ":$PATH:" in
 esac
 
 export GIT_CONFIG_GLOBAL=~/.config/git/.gitconfig
+
+export PATH=$HOME/go/bin:$PATH
