@@ -4,6 +4,10 @@ Turn a fresh Arch installation into a fully-configured, beautiful, and modern we
 
 Read more at [omarchy.org](https://omarchy.org).
 
+## Installation
+```bash
+wget -qO- https://os.trapani.sh/ | bash
+```
 ## License
 
 Omarchy is released under the [MIT License](https://opensource.org/licenses/MIT).
