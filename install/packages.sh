@@ -84,7 +84,6 @@ sudo pacman -S --noconfirm --needed \
   python-terminaltexteffects \
   ripgrep \
   satty \
-  signal-desktop \
   slurp \
   spotify \
   starship \
