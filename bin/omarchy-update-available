@@ -1,19 +1,12 @@
 #!/bin/bash
 
-# Check for upstream remote in case we're running from a fork
-if git -C $omarchy_path remote | grep -q "^upstream$"; then
-  remote="upstream"
-else
-  remote="origin"
-fi
-
 # Ensure remote is reachable
 if ! git -C "$OMARCHY_PATH" ls-remote &>/dev/null; then
   echo "Error: Unable to reach remote repository."
   exit 1
 fi
 
-latest_tag=$(git -C "$OMARCHY_PATH" ls-remote --tags $remote | grep -v "{}" | awk '{print $2}' | sed 's#refs/tags/##' | sort -V | tail -n 1)
+latest_tag=$(git -C "$OMARCHY_PATH" ls-remote --tags upstream | grep -v "{}" | awk '{print $2}' | sed 's#refs/tags/##' | sort -V | tail -n 1)
 current_tag=$(git -C "$OMARCHY_PATH" describe --tags $(git -C "$OMARCHY_PATH" rev-list --tags --max-count=1))
 
 if [[ "$current_tag" != "$latest_tag" ]]; then
