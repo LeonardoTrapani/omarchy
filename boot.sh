@@ -14,7 +14,7 @@ ansi_art='
 clear
 echo -e "\n$ansi_art\n"
 
-sudo pacman -Sy --noconfirm --needed git
+sudo pacman -Syu --noconfirm --needed git
 
 # Use custom repo if specified, otherwise default to leonardotrapani/omarchy
 OMARCHY_REPO="${OMARCHY_REPO:-leonardotrapani/omarchy}"
