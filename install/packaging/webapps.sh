@@ -10,3 +10,4 @@ omarchy-webapp-install "Figma" https://figma.com/ https://www.veryicon.com/downl
 omarchy-webapp-install "Discord" https://discord.com/channels/@me https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/discord.png
 omarchy-webapp-install "Zoom" https://app.zoom.us/wc/home https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/zoom.png
 omarchy-webapp-install "Tasks" https://tasks.google.com/tasks/ https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/todoist.svg
+omarchy-webapp-install "Bocconi" https://youatb.unibocconi.it/ https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/synology-calendar.png
