@@ -32,7 +32,7 @@ windows:
     panes:
       - shell_command:
           - cd techfolio-backend
-          - docker-compose up --build --watch
+          - make run
       - shell_command:
           - cd crm
           - clear
